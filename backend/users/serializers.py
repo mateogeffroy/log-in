@@ -5,7 +5,7 @@ from .models import HC
 class UserSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = User
-		fields = ['id', 'username', 'password']
+		fields = '__all__'
 		extra_kwargs = {'password': {'write_only': True}}
 
 	def create(self, validated_data):
@@ -15,5 +15,5 @@ class UserSerializer(serializers.ModelSerializer):
 class HCSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = HC
-		fields = ['id', 'contenido', 'paciente', 'titulo']
+		fields = '__all__'
 		extra_kwargs = {'paciente': {'write_only': True}}
